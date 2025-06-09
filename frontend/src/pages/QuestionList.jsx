@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "../styles/questionList.css";
 
 const questions = [
@@ -39,9 +40,9 @@ const QuestionList = () => (
             <span className="question-list-votes-label">upvotes</span>
           </div>
           <div className="question-list-main">
-            <a href={`/questions/${q.id}`} className="question-list-link">
+            <Link to={`/questions/${q.id}`} className="question-list-link">
               {q.title}
-            </a>
+            </Link>
             <div className="question-list-meta">
               <span>by {q.author}</span>
               <span>· {q.answers} answers</span>
