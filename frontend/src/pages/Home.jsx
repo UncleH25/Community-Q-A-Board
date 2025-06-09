@@ -40,7 +40,7 @@ const Home = () => (
             </p>
             <div className="home-cta-buttons">
               <a href="/ask" className="home-cta">Ask a Question</a>
-              <a href="/questions" className="home-cta secondary">View Questions</a>
+              <Link to="/questions" className="home-cta secondary">View Questions</Link>
             </div>
           </div>
         </div>
@@ -65,7 +65,7 @@ const Home = () => (
           </li>
         ))}
       </ul>
-      <a href="/questions" className="home-view-all">View all questions &rarr;</a>
+      <Link to="/questions" className="home-view-all">View all questions &rarr;</Link>
     </section>
     <aside className="home-sidebar">
       <div className="home-community-card">
@@ -79,7 +79,7 @@ const Home = () => (
       <div className="home-community-card">
         <h3>Quick Links</h3>
         <ul className="home-sidebar-links">
-          <li><a href="/questions">Browse Questions</a></li>
+          <li><Link to="/questions">Browse Questions</Link></li>
           <li><a href="/ask">Ask a Question</a></li>
           <li><a href="/privacy">Privacy Policy</a></li>
         </ul>
