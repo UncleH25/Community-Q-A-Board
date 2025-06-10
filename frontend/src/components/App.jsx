@@ -5,6 +5,7 @@ import Home from '../pages/Home';
 import QuestionList from '../pages/QuestionList';
 import QuestionDetail from '../pages/QuestionDetail';
 import QuestionForm from '../pages/QuestionForm';
+import AnswerForm from '../pages/Answerform';
 
 function App() {
     return (
@@ -15,6 +16,7 @@ function App() {
                 <Route path="/questions" element={<QuestionList />} />
                 <Route path="/questions/:id" element={<QuestionDetail />} />
                 <Route path="/ask" element={<QuestionForm />} />
+                <Route path="/questions/:id/answer" element={<AnswerForm />} />
             </Routes>
             <Footer />
         </Router>

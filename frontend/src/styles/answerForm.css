@@ -1,0 +1,86 @@
+.answer-form-layout {
+  max-width: 600px;
+  margin: 2.5rem auto 2rem auto;
+  padding: 2rem 1.5rem 3rem 1.5rem;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(79,140,255,0.07);
+}
+
+.answer-form-title {
+  font-size: 2rem;
+  color: #2563eb;
+  font-weight: 700;
+  margin-bottom: 2rem;
+}
+
+.answer-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.3rem;
+}
+
+.answer-form label {
+  font-weight: 500;
+  color: #222;
+  margin-bottom: 0.3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.answer-form input,
+.answer-form textarea {
+  padding: 0.7rem 1rem;
+  border: 1px solid #b6c6e3;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-family: inherit;
+  background: #f6f8fa;
+  transition: border 0.2s;
+}
+
+.answer-form input:focus,
+.answer-form textarea:focus {
+  border: 1.5px solid #4f8cff;
+  outline: none;
+}
+
+.answer-form-submit {
+  background: linear-gradient(90deg, #4f8cff 0%, #6ed6ff 100%);
+  color: #fff;
+  padding: 0.8rem 1.6rem;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  cursor: pointer;
+  margin-top: 0.5rem;
+  transition: background 0.2s;
+}
+
+.answer-form-submit:hover,
+.answer-form-submit:focus {
+  background: #2563eb;
+}
+
+.answer-form-success {
+  text-align: center;
+  color: #2563eb;
+  margin-top: 2rem;
+}
+
+.answer-form-back {
+  display: inline-block;
+  margin-top: 1.5rem;
+  color: #4f8cff;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s;
+}
+
+.answer-form-back:hover,
+.answer-form-back:focus {
+  color: #2563eb;
+  text-decoration: underline;
+}

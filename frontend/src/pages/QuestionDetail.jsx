@@ -57,15 +57,15 @@ const QuestionDetail = () => {
 
   return (
     <main className="question-list-layout">
-      <Link to="/questions" style={{ color: "#2563eb", textDecoration: "none", fontWeight: 500 }}>&larr; Back to Questions</Link>
-      <div className="question-list-card" style={{ marginTop: "1.5rem", flexDirection: "column", gap: "0.7rem" }}>
-        <div style={{ display: "flex", alignItems: "center", gap: "1.2rem" }}>
+      <Link to="/questions" className="qd-back-link">&larr; Back to Questions</Link>
+      <div className="question-list-card qd-question-card">
+        <div className="qd-question-header">
           <div className="question-list-votes">
             <span className="question-list-upvotes">{question.upvotes}</span>
             <span className="question-list-votes-label">upvotes</span>
           </div>
           <div>
-            <h2 style={{ margin: 0 }}>{question.title}</h2>
+            <h2 className="qd-title">{question.title}</h2>
             <div className="question-list-meta">
               <span>by {question.author}</span>
               <span>· {question.answers} answers</span>
@@ -73,26 +73,28 @@ const QuestionDetail = () => {
             </div>
           </div>
         </div>
-        <div style={{ margin: "1rem 0", color: "#444" }}>{question.body}</div>
+        <div className="qd-body">{question.body}</div>
       </div>
-      <div style={{ marginTop: "2rem" }}>
-        <h3 style={{ color: "#2563eb" }}>Answers</h3>
-        <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "1rem" }}>
+      <div className="qd-answers-section">
+        <h3 className="qd-answers-title">Answers</h3>
+        <ul className="qd-answers-list">
           {question.answersList && question.answersList.length > 0 ? (
             question.answersList.map(ans => (
-              <li key={ans.id} style={{
-                background: "#f6f8fa",
-                borderRadius: "8px",
-                padding: "1rem 1.2rem"
-              }}>
-                <div style={{ fontWeight: 600, color: "#2563eb" }}>{ans.author}</div>
-                <div style={{ marginTop: "0.3rem" }}>{ans.text}</div>
+              <li key={ans.id} className="qd-answer-card">
+                <div className="qd-answer-author">{ans.author}</div>
+                <div className="qd-answer-text">{ans.text}</div>
               </li>
             ))
           ) : (
             <li>No answers yet. Be the first to answer!</li>
           )}
         </ul>
+        <Link
+          to={`/questions/${question.id}/answer`}
+          className="qd-answer-btn"
+        >
+          Answer this question
+        </Link>
       </div>
     </main>
   );
