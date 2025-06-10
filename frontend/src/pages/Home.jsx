@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "../styles/home.css";
 
 const trendingQuestions = [
@@ -39,13 +40,12 @@ const Home = () => (
               Whether you need help or want to help others, you’re in the right place!
             </p>
             <div className="home-cta-buttons">
-              <a href="/ask" className="home-cta">Ask a Question</a>
+              <Link to="/ask" className="home-cta">Ask a Question</Link>
               <Link to="/questions" className="home-cta secondary">View Questions</Link>
             </div>
           </div>
         </div>
       </div>
-      {/* ...rest of your code remains unchanged... */}
       <div className="home-section-title">
         <span>Trending Questions</span>
       </div>
@@ -74,13 +74,13 @@ const Home = () => (
           Uncleh25's Community Q&A Board is a place to ask questions, share knowledge, and connect with others. 
           Be kind, be curious, and help each other grow!
         </p>
-        <a href="/ask" className="home-sidebar-cta">Ask your first question</a>
+        <Link to="/ask" className="home-sidebar-cta">Ask your first question</Link>
       </div>
       <div className="home-community-card">
         <h3>Quick Links</h3>
         <ul className="home-sidebar-links">
           <li><Link to="/questions">Browse Questions</Link></li>
-          <li><a href="/ask">Ask a Question</a></li>
+          <li><Link to="/ask">Ask a Question</Link></li>
           <li><a href="/privacy">Privacy Policy</a></li>
         </ul>
       </div>
