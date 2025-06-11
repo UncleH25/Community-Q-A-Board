@@ -1,4 +1,5 @@
 <?php
+<?php
 //Database connection helper for Community Q&A Board
 
 require_once __DIR__ . '/config.php';
@@ -13,28 +14,34 @@ function getPDO() {
 function createTables() {
     $pdo = getPDO();
 
-    //Questions table
-    $pdo->exec("
-        CREATE TABLE IF NOT EXISTS questions (
-            id INT AUTO_INCREMENT PRIMARY KEY,
-            title VARCHAR(255) NOT NULL,
-            body TEXT NOT NULL,
-            created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-        )
-    ");
+    try {
+        //Questions table
+        $pdo->exec("
+            CREATE TABLE IF NOT EXISTS questions (
+                id INT AUTO_INCREMENT PRIMARY KEY,
+                title VARCHAR(255) NOT NULL,
+                body TEXT NOT NULL,
+                created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+            )
+        ");
 
-    //Answers table
-    $pdo->exec("
-        CREATE TABLE IF NOT EXISTS answers (
-            id INT AUTO_INCREMENT PRIMARY KEY,
-            question_id INT NOT NULL,
-            body TEXT NOT NULL,
-            created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-            FOREIGN KEY (question_id) REFERENCES questions(id) ON DELETE CASCADE
-        )
-    ");
+        //Answers table
+        $pdo->exec("
+            CREATE TABLE IF NOT EXISTS answers (
+                id INT AUTO_INCREMENT PRIMARY KEY,
+                question_id INT NOT NULL,
+                body TEXT NOT NULL,
+                created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+                FOREIGN KEY (question_id) REFERENCES questions(id) ON DELETE CASCADE
+            )
+        ");
 
-    //Create the users table
-    createTables();
+        echo "Tables created successfully!";
+    } catch (PDOException $e) {
+        echo "Error creating tables: " . $e->getMessage();
+    }
 }
+
+//Create tables
+createTables();
 ?>
