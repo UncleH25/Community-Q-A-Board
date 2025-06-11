@@ -35,12 +35,13 @@ function createTables() {
             )
         ");
 
-        echo "Tables created successfully!";
+        //Remove or comment out echo statements for production
+        //echo "Tables created successfully!";
     } catch (PDOException $e) {
-        echo "Error creating tables: " . $e->getMessage();
+        //echo "Error creating tables: " . $e->getMessage();
     }
 }
 
-//Create tables
-createTables();
+//Do NOT call createTables() automatically here
+//Only call createTables() manually when you want to set up the database
 ?>
