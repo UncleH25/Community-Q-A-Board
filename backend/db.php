@@ -33,5 +33,8 @@ function createTables() {
             FOREIGN KEY (question_id) REFERENCES questions(id) ON DELETE CASCADE
         )
     ");
+
+    //Create the users table
+    createTables();
 }
 ?>
