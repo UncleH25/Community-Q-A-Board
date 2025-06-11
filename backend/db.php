@@ -1,5 +1,4 @@
 <?php
-<?php
 //Database connection helper for Community Q&A Board
 
 require_once __DIR__ . '/config.php';
